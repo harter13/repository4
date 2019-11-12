@@ -20,7 +20,7 @@ pipeline  {
                 }
             }
         }
-        /* stage("docker login") {
+        stage("docker login") {
             steps {
                 echo " ============== docker login =================="
                 withCredentials([usernamePassword(credentialsId: 'DockerHub-Credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
@@ -34,7 +34,7 @@ pipeline  {
             steps {
                 echo " ============== pushing image =================="
                 sh '''
-                docker push macnaer/students-book:latest
+                docker push harter/repository4:latest
                 '''
             }
         }
@@ -45,6 +45,6 @@ pipeline  {
                 ansible-playbook toolbox/ansible/playbooks/demloyToStageServer.yml
                 '''
             }
-        } */
+        }
     }
 }
