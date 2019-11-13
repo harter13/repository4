@@ -1,4 +1,4 @@
-- name: Pool students-book
+- name: Pool repository4
   hosts: staging
   become: true
   tasks:
@@ -13,13 +13,13 @@
 
   - name: Remove image
     docker_image:
-      name: macnaer/students-book
+      name: harter/repository4
       state: absent
 
   - name: Pull image
     docker_image:
-      name: macnaer/students-book
+      name: harter/repository4
 
-  - name: Start macnaer/students-book
-    shell: docker run -d -p 80:3000 macnaer/students-book
+  - name: Start harter/repository4
+    shell: docker run -d -p 80:5000 harter/repository4
  
